@@ -282,7 +282,7 @@ Resources:
                 - 'codedeploy:RegisterApplicationRevision'
                 - 'codedeploy:List*'
                 Resource:
-                  - !Sub 'arn:${AWS::Partition}:codedeploy:*:${AWS::AccountId}:*'
+                  - !Sub 'arn:${AWS::Partition}:codedeploy:*:${AWS::379694498501}:*'
               - Effect: Allow
                 Action:
                 - 's3:putObject'
@@ -375,7 +375,7 @@ Resources:
                   - ec2:CreateTags
                   - iam:PassRole
                 Resource:
-                  - !Sub 'arn:${AWS::Partition}:codedeploy:*:${AWS::AccountId}:*'
+                  - !Sub 'arn:${AWS::Partition}:codedeploy:*:${AWS::379694498501}:*'
 
   WebappInstanceProfile:
     Type: AWS::IAM::InstanceProfile
@@ -455,7 +455,7 @@ Resources:
                 systemctl enable tomcat.service
                 systemctl status tomcat.service
                 yum install ruby -y
-                wget https://aws-codedeploy-${AWS::Region}.s3.${AWS::Region}.amazonaws.com/latest/install
+                wget https://aws-codedeploy-${AWS::ca-central-1}.s3.${AWS::ca-central-1}.amazonaws.com/latest/install
                 chmod +x ./install
                 ./install auto
                 cd /tmp
